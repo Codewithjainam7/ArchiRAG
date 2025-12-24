@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IngestedDocument, RagConfig, AppPage, AuditLog, Flashcard, ChatMessage, Toast } from './types';
 import { DEFAULT_CONFIG } from './constants';
 import DocumentSidebar from './components/DocumentSidebar';
@@ -9,6 +8,11 @@ import BootScreen from './components/BootScreen';
 import BottomNav from './components/BottomNav';
 import FlashcardDeck from './components/FlashcardDeck';
 import { v4 as uuidv4 } from 'uuid';
+import { ragEngine } from './services/ragEngine';
+import * as pdfjs from 'pdfjs-dist';
+import mammoth from 'mammoth';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `https://esm.sh/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs`;
 
 const App: React.FC = () => {
   const [documents, setDocuments] = useState<IngestedDocument[]>([]);
@@ -22,6 +26,7 @@ const App: React.FC = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [auditLogs, setAuditLogs] = useState<AuditLog[]>([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const mobileFileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -59,10 +64,69 @@ const App: React.FC = () => {
     addAudit('Asset Purged', `Removed ${doc?.fileName} from matrix.`);
   };
 
+  const extractTextFromPdf = async (arrayBuffer: ArrayBuffer): Promise<string> => {
+    const loadingTask = pdfjs.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
+    let fullText = "";
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const strings = content.items.map((item: any) => item.str);
+      fullText += strings.join(" ") + "\n";
+    }
+    return fullText;
+  };
+
+  const extractTextFromDocx = async (arrayBuffer: ArrayBuffer): Promise<string> => {
+    const result = await mammoth.extractRawText({ arrayBuffer });
+    return result.value;
+  };
+
+  const handleMobileFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    setIsProcessing(true);
+
+    try {
+      let text = "";
+      const extension = file.name.split('.').pop()?.toLowerCase();
+
+      if (extension === 'pdf') {
+        const arrayBuffer = await file.arrayBuffer();
+        text = await extractTextFromPdf(arrayBuffer);
+      } else if (extension === 'docx') {
+        const arrayBuffer = await file.arrayBuffer();
+        text = await extractTextFromDocx(arrayBuffer);
+      } else {
+        text = await file.text();
+      }
+
+      const doc = await ragEngine.ingestDocument(file.name, file.type, text, config);
+      handleIngest(doc);
+      if (mobileFileInputRef.current) mobileFileInputRef.current.value = '';
+    } catch (err: any) {
+      addToast(err.message || "Neural Link Error.", 'error');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   if (isBooting) return <BootScreen onComplete={() => setIsBooting(false)} />;
 
   return (
     <div className="flex flex-col md:flex-row h-screen w-full bg-[#000000] overflow-hidden font-sans text-slate-200">
+      {/* Hidden file input for mobile */}
+      {isMobile && (
+        <input 
+          type="file" 
+          ref={mobileFileInputRef} 
+          onChange={handleMobileFileUpload} 
+          className="hidden" 
+          accept=".pdf,.docx,.txt,.md,.html" 
+        />
+      )}
+
       {/* Neural Toast Layer - Fixed clipping and overflow */}
       <div className="fixed top-4 md:top-8 right-4 md:right-8 z-[1000] flex flex-col space-y-4 w-auto max-w-[calc(100vw-2rem)] md:w-80 pointer-events-none">
         {toasts.map(toast => (
@@ -209,7 +273,12 @@ const App: React.FC = () => {
         </div>
 
         {isMobile && (
-          <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
+          <BottomNav 
+            activeTab={activeTab} 
+            onTabChange={setActiveTab}
+            onUploadClick={() => mobileFileInputRef.current?.click()}
+            isProcessing={isProcessing}
+          />
         )}
       </main>
     </div>
