@@ -258,7 +258,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
         {isMobile && <div className="h-32"></div>}
       </div>
 
-      <div className={`p-6 md:p-12 bg-black/90 backdrop-blur-3xl border-t border-white/5 shrink-0 ${isMobile ? 'pb-28' : ''}`}>
+      <div className={`p-6 md:p-12 bg-black/90 backdrop-blur-3xl border-t border-white/5 shrink-0 ${isMobile ? 'pb-32' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <div className="glass rounded-[2.5rem] p-2.5 flex items-center space-x-3 border-white/10 shadow-2xl focus-within:border-blue-500/50 transition-all duration-700 hover:border-white/20">
             <textarea
