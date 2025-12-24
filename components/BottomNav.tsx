@@ -1,13 +1,14 @@
-
 import React from 'react';
 import { AppPage } from '../types';
 
 interface BottomNavProps {
   activeTab: AppPage;
   onTabChange: (tab: AppPage) => void;
+  onUploadClick: () => void;
+  isProcessing: boolean;
 }
 
-const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) => {
+const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange, onUploadClick, isProcessing }) => {
   const tabs: { id: AppPage; icon: React.ReactNode; label: string }[] = [
     {
       id: 'Workspace',
@@ -48,7 +49,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 glass border-t border-white/10 z-[60] px-6 py-2 pb-6 flex justify-between items-center animate-in slide-in-from-bottom duration-300">
+    <div className="fixed bottom-0 left-0 right-0 glass border-t border-white/10 z-[60] px-4 py-2 pb-6 flex justify-between items-center animate-in slide-in-from-bottom duration-300">
       {tabs.map(tab => (
         <button
           key={tab.id}
@@ -61,6 +62,34 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) => {
           <span className="text-[8px] font-black uppercase tracking-widest">{tab.label}</span>
         </button>
       ))}
+      
+      {/* Upload Button - Center FAB Style */}
+      <button
+        onClick={onUploadClick}
+        disabled={isProcessing}
+        className={`flex flex-col items-center space-y-1 transition-all duration-300 ${
+          isProcessing 
+            ? 'text-slate-700 scale-95' 
+            : 'text-blue-500 hover:scale-110 active:scale-95'
+        }`}
+      >
+        <div className={`${
+          isProcessing 
+            ? 'bg-slate-800/50 p-3 rounded-xl' 
+            : 'bg-blue-600 p-3 rounded-xl shadow-2xl shadow-blue-500/40'
+        }`}>
+          {isProcessing ? (
+            <div className="w-6 h-6 border-2 border-slate-600 border-t-slate-400 rounded-full animate-spin"></div>
+          ) : (
+            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+            </svg>
+          )}
+        </div>
+        <span className="text-[8px] font-black uppercase tracking-widest">
+          {isProcessing ? 'Syncing' : 'Upload'}
+        </span>
+      </button>
     </div>
   );
 };
