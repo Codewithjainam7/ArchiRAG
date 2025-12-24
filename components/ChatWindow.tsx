@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage, RagConfig, SearchResult, Flashcard } from '../types';
 import { ragEngine } from '../services/ragEngine';
@@ -170,14 +169,14 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col min-h-0 bg-transparent relative">
+    <div className="flex flex-col h-full min-h-0 bg-transparent relative">
       <SourceExplorer 
         isOpen={sourceExplorerData.isOpen} 
         onClose={() => setSourceExplorerData({ ...sourceExplorerData, isOpen: false })} 
         results={sourceExplorerData.results}
       />
 
-      <div ref={scrollRef} className="chat-scroll-area p-4 md:p-12 space-y-10 md:space-y-20 scroll-smooth">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-12 space-y-10 md:space-y-20 scroll-smooth min-h-0">
         {messages.length === 0 && (
           <div className="h-full flex flex-col items-center justify-center text-center max-w-2xl mx-auto py-16 md:py-32 animate-in fade-in zoom-in-95 duration-1000">
             <div className="text-white font-black italic text-9xl md:text-[12rem] opacity-[0.03] mb-12 select-none pointer-events-none">A</div>
@@ -254,9 +253,12 @@ const ChatWindow: React.FC<ChatWindowProps> = ({
              </div>
           </div>
         )}
+        
+        {/* Mobile spacing for bottom nav */}
+        {isMobile && <div className="h-32"></div>}
       </div>
 
-      <div className={`p-6 md:p-12 bg-black/90 backdrop-blur-3xl border-t border-white/5 shrink-0 ${isMobile ? 'pb-24' : ''}`}>
+      <div className={`p-6 md:p-12 bg-black/90 backdrop-blur-3xl border-t border-white/5 shrink-0 ${isMobile ? 'pb-28' : ''}`}>
         <div className="max-w-5xl mx-auto">
           <div className="glass rounded-[2.5rem] p-2.5 flex items-center space-x-3 border-white/10 shadow-2xl focus-within:border-blue-500/50 transition-all duration-700 hover:border-white/20">
             <textarea
