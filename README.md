@@ -1,195 +1,294 @@
 <div align="center">
 
-<!-- ANIMATED WAVING HEADER -->
+# 🎯 ArchiRAG
 
-<img src="https://www.google.com/search?q=https://capsule-render.vercel.app/api%3Ftype%3Dwaving%26color%3D0ea5e9%26height%3D180%26section%3Dheader%26text%3DARCHIRAG%26fontSize%3D80%26fontColor%3Dffffff%26animation%3DfadeIn%26fontAlignY%3D35" width="100%"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=6366F1&center=true&vCenter=true&width=940&lines=NoteBook+LM+%F0%9F%93%9A;AI-Powered+Document+Intelligence;RAG+Architecture+%2B+Gemini+AI;Build+Your+Smart+Knowledge+Base" alt="Typing SVG" />
 
-<!-- TYPING TEXT ANIMATION -->
+[![GitHub Stars](https://img.shields.io/github/stars/Codewithjainam7/ArchiRAG?style=for-the-badge&logo=github&color=yellow)](https://github.com/Codewithjainam7/ArchiRAG/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Codewithjainam7/ArchiRAG?style=for-the-badge&logo=github&color=blue)](https://github.com/Codewithjainam7/ArchiRAG/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/Codewithjainam7/ArchiRAG?style=for-the-badge&logo=github&color=red)](https://github.com/Codewithjainam7/ArchiRAG/issues)
+[![GitHub License](https://img.shields.io/github/license/Codewithjainam7/ArchiRAG?style=for-the-badge&logo=github&color=green)](https://github.com/Codewithjainam7/ArchiRAG/blob/main/LICENSE)
 
-<a href="https://git.io/typing-svg">
-<img src="https://www.google.com/search?q=https://readme-typing-svg.herokuapp.com%3Ffont%3DJetBrains%2BMono%26weight%3D700%26size%3D24%26duration%3D3000%26pause%3D1000%26color%3D3B82F6%26center%3Dtrue%26vCenter%3Dtrue%26width%3D500%26lines%3DTHE%2BENTERPRISE%2BKNOWLEDGE%2BMATRIX%3BINITIALIZING%2BCOGNITIVE%2BLINK...%3BDATA%2BIS%2BSTATIC.%2BINTELLIGENCE%2BIS%2BFLUID.%3BSTATUS%253A%2BONLINE" alt="Typing SVG" />
-</a>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+<img src="https://img.shields.io/badge/Gemini%20AI-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI" />
+<img src="https://img.shields.io/badge/RAG-FF6B6B?style=for-the-badge&logo=ai&logoColor=white" alt="RAG" />
+<img src="https://img.shields.io/badge/Vector_DB-4CAF50?style=for-the-badge&logo=database&logoColor=white" alt="Vector DB" />
 
-<!-- ANIMATED TECH STACK BADGES -->
+---
 
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/REACT-19-61DAFB%3Fstyle%3Dfor-the-badge%26logo%3Dreact%26logoColor%3Dblack%26labelColor%3D101010" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/GEMINI-1.5_FLASH-8E75B2%3Fstyle%3Dfor-the-badge%26logo%3Dgoogle%26logoColor%3Dwhite%26labelColor%3D101010" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/TYPESCRIPT-5.0-3178C6%3Fstyle%3Dfor-the-badge%26logo%3Dtypescript%26logoColor%3Dwhite%26labelColor%3D101010" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/VITE-TURBO-646CFF%3Fstyle%3Dfor-the-badge%26logo%3Dvite%26logoColor%3Dwhite%26labelColor%3D101010" />
+### 💡 Transform Documents into Interactive AI Knowledge
 
-<!-- MAIN HOLOGRAPHIC INTERFACE DEMO -->
-
-<!-- 🛑 REPLACE THIS GIF WITH YOUR RECORDING OF THE APP -->
-
-<div style="border-radius: 20px; padding: 10px; background: linear-gradient(45deg, #3b82f633, #8b5cf633); box-shadow: 0 0 80px rgba(59, 130, 246, 0.3);">
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmEzMm14bnZ1bmEzMm14bnZ1bmEzMm14bnZ1bmEzMm14bnZ1bmEzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LfpjDCLnAgMmY/giphy.gif" width="100%" style="border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);"/>
-</div>
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=18&pause=1000&color=A855F7&center=true&vCenter=true&width=700&lines=Upload+Documents+%E2%9C%85;AI+Processes+%26+Understands+%F0%9F%A7%A0;Ask+Questions+Get+Answers+%F0%9F%92%AC;Smart+RAG+Architecture+%F0%9F%9A%80" alt="Features Typing" />
 
 </div>
 
-🔮 𝗦𝗬𝗦𝗧𝗘𝗠 𝗠𝗔𝗡𝗜𝗙𝗘𝗦𝗧
+---
 
-"ArchiRAG is not a tool. It is a Cognitive Operating System that bridges the gap between unstructured chaos and crystallized intelligence."
+## 🌟 Features
 
-By fusing Google's Gemini 1.5 Flash with a High-Fidelity Cinematic UI, ArchiRAG transforms boring document ingestion into a visceral, visual experience.
-
-🧬 CORE CAPABILITIES
-
-MODULE
-
-FUNCTION
-
-VISUAL SIGNATURE
-
-🧠 Neural Workspace
-
-Contextual RAG Chat
-
-Typewriter Streaming • Neon Logic Buffers
-
-🗂️ Source Explorer
-
-Real-time Vector Inspection
-
-Sliding Glass Panels • Heatmap Confidence
-
-🃏 Synthetic Memory
-
-Flashcard Auto-Generation
-
-3D Holographic Flips • Kinetic Snap Deletion
-
-🛡️ Neural Shield
-
-Enterprise Security Layer
-
-AES-GCM Encryption • Audit Trace Logs
-
-⚙️ Calibration
-
-Cognitive Tuning
-
-Fluid Sliders • Top-K Vector Control
-
-🖥️ 𝗩𝗜𝗦𝗨𝗔𝗟 𝗣𝗥𝗢𝗧𝗢𝗖𝗢𝗟𝗦
-
-<!-- GRID LAYOUT FOR VISUAL FEATURES -->
-
-<table width="100%">
+<table>
 <tr>
-<td width="50%" align="center">
-<h3 align="center">Cinematic Boot Sequence</h3>
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="100%" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+<td width="50%">
 
+### 📄 Document Processing
+- ✨ Multi-format support (PDF, TXT, DOCX)
+- 🔍 Intelligent text extraction
+- 📊 Automatic chunking & embedding
+- 💾 Vector database storage
 
-
-
-
-
-
-<p><i>CRT Scanlines • Particle Flow</i></p>
 </td>
-<td width="50%" align="center">
-<h3 align="center">Holographic Data Deck</h3>
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/3o7TKSjRrfPHvzTqny/giphy.gif" width="100%" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+<td width="50%">
 
+### 🤖 AI Intelligence
+- 🧠 Powered by Google Gemini AI
+- 💬 Natural language Q&A
+- 🎯 Context-aware responses
+- 🔄 RAG architecture
 
-
-
-
-
-
-<p><i>3D Perspective • Glassmorphism</i></p>
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-<h3 align="center">The Matrix Explorer</h3>
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/26tn33aiTi1jkl6HC/giphy.gif" width="100%" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-
-
-
-
-
-
-
-<p><i>Real-time Shard Visualization</i></p>
-</td>
-<td width="50%" align="center">
-<h3 align="center">Neural Ingestion</h3>
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/l41lFw057lAJcYt0I/giphy.gif" width="100%" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-
-
-
-
-
-
-
-<p><i>PDF/DOCX Processing</i></p>
 </td>
 </tr>
 </table>
 
-⚡ 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗦𝗘𝗤𝗨𝗘𝗡𝗖𝗘
+---
 
-<details>
-<summary><h3>Click to Initialize Deployment Protocols (v1.0)</h3></summary>
+## 🚀 Quick Start
 
-# 1. CLONE THE REPOSITORY
-git clone [https://github.com/codewithjainam7/archirag.git](https://github.com/codewithjainam7/archirag.git)
-cd archirag
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=10B981&width=435&lines=Get+Started+in+3+Steps!+%F0%9F%9A%80" alt="Quick Start" />
 
-# 2. INSTALL NEURAL DEPENDENCIES
-npm install
-# > Installing: pdfjs-dist... [OK]
-# > Installing: mammoth... [OK]
-# > Installing: google-genai... [OK]
-# > Installing: framer-motion logic... [OK]
+### 1️⃣ Clone the Repository
 
-# 3. CONFIGURE ENVIRONMENT
-echo "GEMINI_API_KEY=your_api_key_here" > .env
+git clone https://github.com/Codewithjainam7/ArchiRAG.git
+cd ArchiRAG
 
-# 4. INITIATE SYSTEM
-npm run dev
+text
 
+### 2️⃣ Install Dependencies
 
-SYSTEM STATUS: Listening on http://localhost:3000 via Vite engine.
+pip install -r requirements.txt
 
-</details>
+text
 
-📐 𝗡𝗘𝗨𝗥𝗔𝗟 𝗔𝗥𝗖𝗛𝗜𝗧𝗘𝗖𝗧𝗨𝗥𝗘
+### 3️⃣ Set Up Environment
 
-graph TD
-    A[User Input] -->|Inject| B(Chat Window)
-    B -->|Query| C{RagEngine}
-    C -->|Hybrid Search| D[Vector Store]
-    D -->|Retrieve Shards| C
-    C -->|Context + Prompt| E[Gemini 1.5 Flash]
-    E -->|Stream Response| B
-    E -->|Auto-Generate| F[Flashcards]
-    
-    subgraph "Visual Layer"
-    B
-    F
-    G[Source Explorer]
-    end
-    
-    subgraph "Logic Core"
-    C
-    D
-    end
-    
-    D -.->|Visualize| G
+Create a `.env` file:
 
+GEMINI_API_KEY=your_gemini_api_key_here
+
+text
+
+### 4️⃣ Run the Application
+
+python app.py
+
+text
 
 <div align="center">
 
-"The future is not written. It is generated."
+🎉 **That's it!** Open your browser and navigate to `http://localhost:5000`
 
-<!-- ANIMATED FOOTER -->
+</div>
 
-<img src="https://www.google.com/search?q=https://capsule-render.vercel.app/api%3Ftype%3Dwaving%26color%3D0ea5e9%26height%3D100%26section%3Dfooter%26text%3DARCHIRAG%2520SYSTEMS%26fontSize%3D20%26fontColor%3Dffffff%26animation%3DfadeIn%26fontAlignY%3D50" width="100%"/>
+---
 
-Report a Glitch • Request Upgrade
+## 💻 Technology Stack
+
+<div align="center">
+
+| Technology | Purpose | Version |
+|:---:|:---:|:---:|
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | Backend | 3.8+ |
+| ![Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=flat-square&logo=google&logoColor=white) | AI Model | Latest |
+| ![LangChain](https://img.shields.io/badge/LangChain-121212?style=flat-square&logo=chainlink&logoColor=white) | RAG Framework | Latest |
+| ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B6B?style=flat-square&logo=database&logoColor=white) | Vector Store | Latest |
+| ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white) | Web Framework | 2.0+ |
+
+</div>
+
+---
+
+## 📁 Project Structure
+
+ArchiRAG/
+│
+├── 📂 app/
+│ ├── 🐍 init.py
+│ ├── 🐍 routes.py
+│ ├── 🐍 models.py
+│ └── 🐍 utils.py
+│
+├── 📂 templates/
+│ ├── 🎨 index.html
+│ └── 🎨 chat.html
+│
+├── 📂 static/
+│ ├── 🎨 css/
+│ ├── 📜 js/
+│ └── 🖼️ images/
+│
+├── 📂 data/
+│ └── 📄 uploaded_documents/
+│
+├── 📂 vectorstore/
+│ └── 💾 chroma_db/
+│
+├── 🐍 app.py
+├── 📋 requirements.txt
+├── 🔐 .env.example
+└── 📖 README.md
+
+text
+
+---
+
+## 🎯 How It Works
+
+<div align="center">
+
+graph LR
+A[📄 Upload Document] --> B[🔍 Extract Text]
+B --> C[✂️ Chunk Text]
+C --> D[🧮 Generate Embeddings]
+D --> E[💾 Store in Vector DB]
+E --> F[❓ User Query]
+F --> G[🔎 Similarity Search]
+G --> H[🤖 Gemini AI Processing]
+H --> I[💬 Generate Answer]
+
+text
+style A fill:#4CAF50
+style E fill:#2196F3
+style I fill:#FF9800
+text
+
+</div>
+
+---
+
+## 🔥 Key Capabilities
+
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=F97316&center=true&vCenter=true&width=600&lines=RAG+%2B+Gemini+%3D+Powerful+AI+%F0%9F%9A%80;Intelligent+Document+Analysis+%F0%9F%93%8A;Context-Aware+Responses+%F0%9F%92%A1" alt="Capabilities" />
+
+</div>
+
+### ✅ What ArchiRAG Can Do
+
+- 📚 **Document Understanding**: Process and understand complex documents
+- 💭 **Contextual Q&A**: Answer questions based on your documents
+- 🔍 **Semantic Search**: Find relevant information quickly
+- 🧠 **Smart Retrieval**: RAG ensures accurate, grounded responses
+- 🎯 **Multi-Document Support**: Query across multiple documents
+
+---
+
+## 🎨 Screenshots
+
+<div align="center">
+
+### 🏠 Home Interface
+
+![Home](https://via.placeholder.com/800x400/6366F1/FFFFFF?text=ArchiRAG+Home+Interface)
+
+### 💬 Chat Interface
+
+![Chat](https://via.placeholder.com/800x400/10B981/FFFFFF?text=AI+Chat+Interface)
+
+### 📊 Document Upload
+
+![Upload](https://via.placeholder.com/800x400/F59E0B/FFFFFF?text=Document+Upload)
+
+</div>
+
+---
+
+## ⚙️ Configuration
+
+### Required API Keys
+
+| Service | Key | Get From |
+|:---:|:---:|:---:|
+| Gemini AI | `GEMINI_API_KEY` | [Google AI Studio](https://makersuite.google.com/app/apikey) |
+
+### Optional Settings
+
+config.py
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 200
+EMBEDDING_MODEL = "models/embedding-001"
+LLM_MODEL = "gemini-pro"
+TEMPERATURE = 0.7
+MAX_TOKENS = 1024
+
+text
+
+---
+
+## 🤝 Contributing
+
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=EC4899&center=true&vCenter=true&width=500&lines=Contributions+are+Welcome!+%F0%9F%A4%9D;Fork+%E2%80%A2+Code+%E2%80%A2+PR+%E2%9C%A8" alt="Contributing" />
+
+</div>
+
+1. 🍴 Fork the repository
+2. 🌿 Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🔃 Open a Pull Request
+
+---
+
+## 📜 License
+
+<div align="center">
+
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+</div>
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Created with ❤️ by **Jainam**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Codewithjainam7-181717?style=for-the-badge&logo=github)](https://github.com/Codewithjainam7)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/your-profile)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/your-handle)
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=6366F1&center=true&vCenter=true&width=500&lines=%E2%AD%90+Star+this+repo+if+you+like+it!+%E2%AD%90;%F0%9F%93%A2+Share+with+your+friends!+%F0%9F%93%A2;%F0%9F%92%AC+Feel+free+to+reach+out!+%F0%9F%92%AC" alt="Footer" />
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+- [Google Gemini AI](https://ai.google.dev/) - For powerful AI capabilities [web:2]
+- [LangChain](https://langchain.com/) - For RAG framework
+- [ChromaDB](https://www.trychroma.com/) - For vector storage
+- All contributors and supporters! 🌟
+
+---
+
+<div align="center">
+
+### 📊 Repository Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Codewithjainam7&repo=ArchiRAG&show_icons=true&theme=radical)
+
+### 🔥 Streak Stats
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Codewithjainam7&theme=radical)
+
+---
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=Thank+you+for+visiting!+%F0%9F%99%8F;Happy+Coding!+%F0%9F%92%BB%E2%9C%A8;Star+%E2%AD%90+this+repo+to+support!" alt="Thank You" />
 
 </div>
