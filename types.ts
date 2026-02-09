@@ -104,3 +104,10 @@ export interface ChatMessage {
   scope?: QueryScope;
   strategy?: RetrievalStrategy;
 }
+
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  avatar: string;
+}

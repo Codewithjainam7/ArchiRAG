@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { IngestedDocument, RagConfig, AppPage, AuditLog, Flashcard, ChatMessage, Toast } from './types';
+import { IngestedDocument, RagConfig, AppPage, AuditLog, Flashcard, ChatMessage, Toast, User } from './types';
 import { DEFAULT_CONFIG } from './constants';
 import DocumentSidebar from './components/DocumentSidebar';
 import SettingsPanel from './components/SettingsPanel';
 import ChatWindow from './components/ChatWindow';
 import BootScreen from './components/BootScreen';
+import LoginPage from './components/LoginPage';
 import BottomNav from './components/BottomNav';
 import FlashcardDeck from './components/FlashcardDeck';
 import { v4 as uuidv4 } from 'uuid';
@@ -22,6 +23,13 @@ const App: React.FC = () => {
   const [config, setConfig] = useState<RagConfig>(DEFAULT_CONFIG);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isBooting, setIsBooting] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    return !!localStorage.getItem('eduhub_user');
+  });
+  const [user, setUser] = useState<User | null>(() => {
+    const savedUser = localStorage.getItem('eduhub_user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
   const [activeTab, setActiveTab] = useState<AppPage>('Workspace');
   const [showSettings, setShowSettings] = useState(false);
   const [auditLogs, setAuditLogs] = useState<AuditLog[]>([]);
@@ -157,7 +165,23 @@ const App: React.FC = () => {
     }
   };
 
+  const handleLogin = (loggedInUser: User) => {
+    setUser(loggedInUser);
+    setIsAuthenticated(true);
+    addAudit('User Login', `${loggedInUser.name} authenticated successfully.`);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('eduhub_user');
+    setUser(null);
+    setIsAuthenticated(false);
+    addToast('Session Terminated', 'info');
+    addAudit('User Logout', 'User session ended.');
+  };
+
   if (isBooting) return <BootScreen onComplete={() => setIsBooting(false)} />;
+
+  if (!isAuthenticated) return <LoginPage onLogin={handleLogin} />;
 
   return (
     <div className="flex flex-col md:flex-row h-screen w-full bg-[#000000] overflow-hidden font-sans text-slate-200">
@@ -228,7 +252,22 @@ const App: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </button>
-            <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-black text-sm shadow-2xl ring-2 ring-white/10">AD</div>
+            <button
+              onClick={handleLogout}
+              className="p-4 rounded-2xl border border-white/5 glass text-slate-500 hover:text-rose-400 hover:border-rose-500/30 transition-all duration-500"
+              title="Logout"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+            </button>
+            {user?.avatar ? (
+              <img src={user.avatar} alt={user.name} className="h-12 w-12 rounded-2xl object-cover shadow-2xl ring-2 ring-white/10" />
+            ) : (
+              <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-black text-sm shadow-2xl ring-2 ring-white/10">
+                {user?.name?.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) || 'U'}
+              </div>
+            )}
           </div>
         </header>
 
