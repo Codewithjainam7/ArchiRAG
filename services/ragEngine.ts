@@ -231,6 +231,53 @@ export class RagEngine {
   }
 
   /**
+   * Detect if the query is asking about a specific page number
+   */
+  private detectPageQuery(query: string): number | null {
+    const q = query.toLowerCase();
+
+    // Patterns: "page 101", "page no 101", "page number 101", "pg 101", "on page 101"
+    const patterns = [
+      /(?:page|pg)\.?\s*(?:no\.?|number)?\s*(\d+)/i,
+      /(?:on|from|at|in)\s+(?:page|pg)\.?\s*(\d+)/i,
+      /(?:what's|what is|whats|show|tell me|give me).*(?:page|pg)\.?\s*(?:no\.?|number)?\s*(\d+)/i,
+      /(?:content|text|information).*(?:page|pg)\.?\s*(\d+)/i,
+    ];
+
+    for (const pattern of patterns) {
+      const match = query.match(pattern);
+      if (match && match[1]) {
+        return parseInt(match[1], 10);
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Get all chunks from a specific page number
+   */
+  async getPageContent(pageNumber: number): Promise<SearchResult[]> {
+    await this.ensureInitialized();
+
+    const pageChunks = this.vectorStore.filter(
+      chunk => chunk.metadata.pageNumber === pageNumber
+    );
+
+    if (pageChunks.length === 0) {
+      return [];
+    }
+
+    // Sort by chunk index to maintain order
+    pageChunks.sort((a, b) => a.metadata.chunkIndex - b.metadata.chunkIndex);
+
+    return pageChunks.map((chunk, index) => ({
+      chunk,
+      score: 1.0 - (index * 0.01), // Slight score variation to maintain order
+      strategyUsed: 'keyword' as RetrievalStrategy
+    }));
+  }
+
+  /**
    * Feature 2: Retrieval Strategy Auto-Selection - Enhanced
    */
   private determineStrategy(query: string): RetrievalStrategy {
@@ -273,6 +320,18 @@ export class RagEngine {
 
   async search(query: string, config: RagConfig): Promise<SearchResult[]> {
     await this.ensureInitialized();
+
+    // Check for page-specific query first
+    const pageNumber = this.detectPageQuery(query);
+    if (pageNumber !== null) {
+      const pageResults = await this.getPageContent(pageNumber);
+      if (pageResults.length > 0) {
+        console.log(`[RAG] Page query detected: returning content from page ${pageNumber}`);
+        return pageResults;
+      }
+      // If no content found for that page, fall through to regular search
+      console.log(`[RAG] No content found for page ${pageNumber}, using regular search`);
+    }
 
     const strategy = this.determineStrategy(query);
     const queryEmbedding = await geminiService.getEmbedding(query, config.embeddingModel);
